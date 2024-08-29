@@ -1,0 +1,64 @@
+# User Documentation for Brain Tumor Classification Code
+
+## Overview
+
+This documentation provides a detailed explanation of the code in the `Brain_Tumor_Classification_Sana_Final_File.ipynb` notebook. It includes information on the functionality of the code, the format of the input and output data, a summary of the parameters and hyperparameters used, and any issues encountered during development.
+
+## Code Functionality
+
+### Data Preprocessing
+- **Description**: The code includes functions to load and preprocess MRI images, including resizing and normalizing the images.
+- **Input**: Raw MRI images in JPG format.
+- **Output**: Preprocessed images ready for model training.
+
+### Model Training
+- **Description**: The code trains a VGG16 model and other deep learning models on the preprocessed MRI images.
+- **Input**: Preprocessed images and corresponding labels.
+- **Output**: Trained model saved as `.h5` files in the `models/` directory.
+
+### Model Evaluation
+- **Description**: The code evaluates the trained model using accuracy, precision, recall, and F1-score.
+- **Input**: Test images and true labels.
+- **Output**: Evaluation metrics printed to the console and visualized using plots.
+
+### Visualization
+- **Description**: The code generates and saves plots for training history, confusion matrices, and model performance.
+- **Input**: Training and evaluation data.
+- **Output**: Plots saved as PNG files in the `plots/` directory.
+
+## Input/Output Formats
+
+### Input Format
+- **Images**: JPG files with dimensions resized to 224x224 pixels.
+- **Labels**: Categorical labels indicating the type of brain tumor.
+
+### Output Format
+- **Model**: Trained models saved as `.h5` files.
+- **Metrics**: Evaluation metrics such as accuracy, precision, recall, and F1-score.
+- **Plots**: PNG files for visualizing the training history, confusion matrices, etc.
+
+## Parameters and Hyperparameters
+
+### Model Parameters
+- **Learning Rate**: 0.001 (default)
+- **Batch Size**: 32 (default)
+- **Epochs**: 50 (default)
+
+### Hyperparameters
+- **Optimizer**: Adam
+- **Loss Function**: Categorical Crossentropy
+- **Metrics**: Accuracy, Precision, Recall, F1-Score
+
+## Issues Encountered
+
+- **Data Imbalance**: The dataset was imbalanced, with some classes having significantly more images than others. This was addressed by applying data augmentation techniques.
+- **Overfitting**: The model initially showed signs of overfitting, which was mitigated by using dropout layers and regularization techniques.
+- **Training Time**: Training the VGG16 model took a significant amount of time, especially on a large dataset. This was addressed by using a GPU on Google Colab.
+
+## Additional Notes
+
+- The notebook is designed to be run on Google Colab for optimal performance, especially for models like VGG19.
+
+## Conclusion
+
+This documentation should provide you with all the necessary information to understand and use the code for brain tumor classification. If you encounter any issues, feel free to refer to the [GitHub Repository](https://github.com/yourusername/Brain-Tumor-Classification) for further assistance.
